@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Crear Receta</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" defer src="main.js"></script>
 </head>
+
 <body>
-    <div style="background-color: rgba(0, 0, 0, 0.361); width:450px; height: 520px; padding-top: 50px; padding-left: 4%; margin-top: 7%; margin-left: 20%;">
+    <div class="form-container">
         <h1>Crea tu receta</h1>
-     <div>
-            <label for="nombre">Nombre de la recet: </label>
-            <input type="text" id="nombre" required>
-        </div>
-        .
-        <div>
-        <label for="ingredientes">ingredientes: </label>
-        <input type="text" id="ingredientes" required>
-        </div>
-        .
-        <div>
-            <label for="Instrunccion">Instrucciones de preparación: </label>
-        <input type="text" id="Instrunccion" required> <input type="file">
-        </div>
-        .
-        <div>
-            <p>Tiempo de preparación:</p>
-            <input type="time">
-        </div>
-        .
-        <div>
-            <p>Número de porciones:</p>
-            <input type="number" required>
-        </div>
-        .
-        <div>
-            <p>Categoría (Desayuno, Almuerzo, Cena, Postre, etc.).</p>
-            <label for="checkbox1">Desayuno</label>
-            <input type="checkbox" id="checkbox1" name="checkbox1" required>
-            /
-            <label for="checkbox2">Almuerzo</label>
-            <input type="checkbox" id="checkbox2" name="checkbox2" required>
-            /
-            <label for="checkbox3">Cena</label>
-            <input type="checkbox" id="checkbox3" name="checkbox3" required>
-            /
-            <label for="checkbox4">Otro</label>
-            <input type="checkbox" id="checkbox4" name="checkbox4" required>
-            <input type="text" id="checkbox4" required>
-        </div>
-        .
-        <div>
-            <p>Nivel de dificultad (Fácil, Medio, Difícil).</p>
-            <label for="checkbox1">Fácil</label>
-            <input type="checkbox" id="checkbox1" name="checkbox1" required>
-            /
-            <label for="checkbox2">Medio</label>
-            <input type="checkbox" id="checkbox2" name="checkbox2" required>
-            /
-            <label for="checkbox3">Difícil</label>
-            <input type="checkbox" id="checkbox3" name="checkbox3" required>
-        </div>
-        <button type="submit" style="width: 100px;height: 20px; color: brown; background-color: antiquewhite; border: none; border-radius: 20px;">Guardar</button>
-        <a  href="recetas.html" style="color: #000; text-decoration: none;"><button style="width: 100px;height: 20px; color: brown; background-color: antiquewhite; border: none; border-radius: 20px;">recetas</button></a>
-        <a  href="https://www.kfc.com" style=" color: #000; text-decoration: none;"><button style=" width: 100px;height: 20px; color: brown; background-color: antiquewhite; border: none; border-radius: 20px;">restaurante</button></a>
+        <form id="form-receta">
+            <!-- Nombre de la receta -->
+            <div>
+                <label for="nombre">Nombre de la receta:</label>
+                <input type="text" id="nombre" placeholder="Ej. Tarta de manzana" required>
+            </div>
+
+            <!-- Ingredientes -->
+            <div>
+                <label for="ingredientes">Ingredientes:</label>
+                <textarea id="ingredientes" rows="4" placeholder="Ej. 3 manzanas, 200g de harina..." required></textarea>
+            </div>
+
+            <!-- Instrucciones -->
+            <div>
+                <label for="instrucciones">Instrucciones de preparación:</label>
+                <textarea id="instrucciones" rows="6" placeholder="Escribe los pasos a seguir..." required></textarea>
+            </div>
+
+            <!-- Tiempo de preparación -->
+            <div>
+                <label for="tiempo">Tiempo de preparación (minutos):</label>
+                <input type="number" id="tiempo" min="1" placeholder="Ej. 30" required>
+            </div>
+
+            <!-- Número de porciones -->
+            <div>
+                <label for="porciones">Número de porciones:</label>
+                <input type="number" id="porciones" min="1" placeholder="Ej. 4" required>
+            </div>
+
+            <!-- Categoría -->
+            <div>
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" required>
+                    <option value="">Seleccionar...</option>
+                    <option value="Desayuno">Desayuno</option>
+                    <option value="Almuerzo">Almuerzo</option>
+                    <option value="Cena">Cena</option>
+                    <option value="Postre">Postre</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+
+            <!-- Nivel de dificultad -->
+            <div>
+                <label for="dificultad">Nivel de dificultad:</label>
+                <select id="dificultad" required>
+                    <option value="">Seleccionar...</option>
+                    <option value="Fácil">Fácil</option>
+                    <option value="Medio">Medio</option>
+                    <option value="Difícil">Difícil</option>
+                </select>
+            </div>
+
+            <!-- Botón para guardar la receta -->
+            <button type="submit" id="guardar">Guardar</button>
+        </form>
+
+        <!-- Botón para regresar a la página de recetas -->
+        <a href="recetas.html">
+            <button class="regresar-btn">Ver Recetas</button>
+        </a>
     </div>
-
-    
-
 </body>
+
 </html>

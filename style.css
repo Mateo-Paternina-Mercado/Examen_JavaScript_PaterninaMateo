@@ -10,37 +10,117 @@
     --error-color: #6a2a2a;
     --danger-color: #8a2a2a;
     --background-gradient: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-    }
+}
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    grid-auto-flow: column;
+    font-family: "Roboto", sans-serif;
     background-image: var(--background-gradient);
-    background-attachment: fixed;
     color: var(--text-color);
-    font-family: "MedievalSharp", "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
     min-height: 100vh;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+}
 
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal del formulario */
+.form-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilo base para los campos de entrada */
+input, textarea, select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff; /* Fondo blanco sólido para asegurar legibilidad */
+    color: var(--text-color); /* Asegura que el texto sea legible */
+    width: 100%;
+}
+
+/* Estilo para textarea para asegurar que se expanda si es necesario */
+textarea {
+    resize: vertical;
+}
+
+/* Estilo para los botones */
+button {
+    padding: 10px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--highlight-color);
+}
+
+button:active {
+    background-color: var(--accent-light);
+}
+
+button.regresar-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button.regresar-btn:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Ajustes de responsividad */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
     }
 
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: 300px;
-        opacity: 0.05;
-        pointer-events: none;
-        z-index: -1;
-        } 
+    h1 {
+        font-size: 1.5rem;
+    }
 
+    input, textarea, select {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
